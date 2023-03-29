@@ -18,7 +18,7 @@ class DatasetSplit(Dataset):
         image, label = self.dataset[self.idxs[item]]
         return image, label
 
-def load_data(batchsize:int, numworkers:int) -> tuple[DataLoader, DistributedSampler]:
+def load_data(batchsize:int, numworkers:int):
     trans = transforms.Compose([
             transforms.ToTensor(),
             transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
